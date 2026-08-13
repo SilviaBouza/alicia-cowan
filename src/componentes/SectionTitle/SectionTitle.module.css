@@ -1,0 +1,45 @@
+.container {
+  margin-bottom: 60px;
+}
+
+.center {
+  text-align: center;
+}
+
+.subtitle {
+  display: inline-block;
+
+  color: var(--dorado);
+
+  font-size: .85rem;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+
+  margin-bottom: 12px;
+}
+
+.title {
+  font-family: var(--titulo);
+
+  color: var(--borgona);
+
+  font-size: clamp(2rem, 5vw, 3rem);
+
+  margin-bottom: 20px;
+}
+
+.description {
+  max-width: 720px;
+
+  margin: 0 auto;
+
+  color: var(--grafito);
+
+  line-height: 1.8;
+
+  font-size: 1.05rem;
+}
