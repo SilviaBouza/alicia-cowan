@@ -1,255 +1,589 @@
-.cta {
+.biografia {
+  background: var(--marfil);
+  color: var(--grafito);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
   position: relative;
-
-  min-height: 320px;
-
-  overflow: hidden;
+  min-height: 390px;
 
   display: flex;
   align-items: center;
+  justify-content: center;
 
-  color: white;
-
-  background: var(--borgona-dark);
+  background:
+    url("../assets/taller religioso.png")
+    center / cover no-repeat;
 }
 
-.background {
-  position: absolute;
-  inset: 0;
-
-  background-size: cover;
-  background-position: center 65%;
-
-  transform: scale(1.03);
-}
-
-.overlay {
+.heroOverlay {
   position: absolute;
   inset: 0;
 
   background:
     linear-gradient(
-      90deg,
-      rgba(45, 9, 14, 0.94),
-      rgba(74, 20, 28, 0.88)
+      rgba(45, 10, 15, 0.82),
+      rgba(45, 10, 15, 0.72)
     );
 }
 
-.container {
+.heroContent {
   position: relative;
   z-index: 2;
 
-  width: min(1250px, 90%);
-  margin: 0 auto;
-
-  display: grid;
-  grid-template-columns: 1.5fr 1px 0.8fr;
-
-  align-items: center;
-
-  gap: 55px;
-
-  padding: 65px 0;
+  text-align: center;
+  color: white;
 }
 
-/* =========================
-   FRASE
-========================= */
-
-.quote {
-  position: relative;
-
-  padding-left: 42px;
-}
-
-.comillas {
-  position: absolute;
-
-  top: -20px;
-  left: 0;
-
+.heroContent > span {
   color: var(--dorado);
 
-  font-family: Georgia, serif;
+  font-size: 0.75rem;
+  font-weight: 700;
 
-  font-size: 5rem;
-  line-height: 1;
+  letter-spacing: 3px;
+  text-transform: uppercase;
 }
 
-.quote blockquote {
-  max-width: 680px;
-
-  margin: 0;
+.heroContent h1 {
+  margin: 12px 0;
 
   font-family: var(--titulo);
-
-  font-size: clamp(1.7rem, 3vw, 2.5rem);
-
+  font-size: clamp(3rem, 7vw, 5rem);
   font-weight: 400;
-
-  line-height: 1.3;
 }
 
-.autor {
-  display: block;
+.ornamento {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
 
-  margin-top: 18px;
+.ornamento i {
+  width: 45px;
+  height: 1px;
+  background: var(--dorado);
+}
 
+.ornamento b {
   color: var(--dorado);
+  font-size: 0.8rem;
+}
+
+.heroContent p {
+  margin-top: 15px;
 
   font-family: var(--titulo);
-
-  font-size: 1rem;
-
+  font-size: 1.15rem;
   font-style: italic;
 }
 
 /* =========================
-   SEPARADOR
+   CONTENEDOR
 ========================= */
 
-.separator {
-  width: 1px;
-  height: 150px;
+.container {
+  width: min(1150px, 90%);
+  margin: 0 auto;
 
-  background: rgba(193, 154, 86, 0.55);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 75px;
+  align-items: center;
+}
+
+/* =========================
+   SECCIONES
+========================= */
+
+.introduccion,
+.nodarco,
+.sanFrancisco,
+.legado {
+  padding: 100px 0;
+}
+
+.nodarco {
+  background: #f2eee6;
+}
+
+.sanFrancisco {
+  background: var(--marfil);
+}
+
+.legado {
+  background: var(--borgona);
+  color: white;
+}
+
+.textBlock {
+  max-width: 540px;
+}
+
+.etiqueta {
+  display: block;
+
+  margin-bottom: 15px;
+
+  color: var(--dorado);
+
+  font-size: 0.7rem;
+  font-weight: 700;
+
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
+}
+
+.textBlock h2,
+.sectionHeader h2 {
+  margin: 0;
+
+  color: var(--borgona);
+
+  font-family: var(--titulo);
+  font-size: clamp(2rem, 4vw, 3rem);
+
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.legado .textBlock h2 {
+  color: white;
+}
+
+.textBlock h2 small {
+  display: block;
+
+  margin-top: 7px;
+
+  color: var(--dorado);
+
+  font-family: var(--texto);
+  font-size: 0.8rem;
+
+  letter-spacing: 2px;
+}
+
+.linea {
+  width: 42px;
+  height: 1px;
+
+  margin: 22px 0;
+
+  background: var(--dorado);
+}
+
+.textBlock p {
+  margin: 0 0 15px;
+
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.textBlock blockquote {
+  margin: 25px 0 0;
+
+  padding-left: 20px;
+
+  border-left: 2px solid var(--dorado);
+
+  color: var(--borgona);
+
+  font-family: var(--titulo);
+  font-size: 1.15rem;
+  font-style: italic;
+
+  line-height: 1.5;
+}
+
+/* =========================
+   IMÁGENES
+========================= */
+
+.imageBlock {
+  position: relative;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(193, 154, 86, 0.45);
+
+  padding: 5px;
+
+  background: white;
+}
+
+.imageBlock img {
+  display: block;
+
+  width: 100%;
+  height: 400px;
+
+  object-fit: cover;
+}
+
+.caption {
+  position: absolute;
+
+  left: 20px;
+  bottom: 20px;
+
+  padding: 7px 12px;
+
+  background: var(--borgona);
+
+  color: white;
+
+  font-size: 0.65rem;
+  letter-spacing: 1px;
+}
+
+/* =========================
+   OBRAS
+========================= */
+
+.obras {
+  padding: 100px 5%;
+
+  text-align: center;
+
+  background: #f7f3eb;
+}
+
+.sectionHeader {
+  max-width: 700px;
+
+  margin: 0 auto 50px;
+}
+
+.sectionHeader p {
+  margin-top: 15px;
+
+  color: #666;
+
+  line-height: 1.7;
+}
+
+.obrasGrid {
+  width: min(1150px, 100%);
+
+  margin: 0 auto 40px;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 25px;
+
+  text-align: left;
+}
+
+.obrasGrid article {
+  overflow: hidden;
+
+  border: 1px solid var(--gris);
+
+  background: white;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.obrasGrid article:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.obraPlaceholder {
+  height: 190px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #d8c7a5,
+      #8d6845
+    );
+
+  color: white;
+
+  font-family: var(--titulo);
+  font-size: 1.3rem;
+}
+
+.obrasGrid h3 {
+  margin: 18px 18px 5px;
+
+  color: var(--borgona);
+
+  font-family: var(--titulo);
+  font-size: 1.15rem;
+  font-weight: 400;
+}
+
+.obrasGrid span {
+  display: block;
+
+  margin: 0 18px 18px;
+
+  color: #777;
+
+  font-size: 0.72rem;
+}
+
+.boton {
+  display: inline-flex;
+
+  align-items: center;
+  gap: 30px;
+
+  padding: 12px 22px;
+
+  border: 1px solid var(--borgona);
+
+  color: var(--borgona);
+
+  font-size: 0.7rem;
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.boton strong {
+  color: var(--dorado);
+  font-size: 1.1rem;
+}
+
+.boton:hover {
+  background: var(--borgona);
+  color: white;
+}
+
+/* =========================
+   LEGADO
+========================= */
+
+.legado .textBlock p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.legado ul {
+  margin: 25px 0 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.legado li {
+  margin-bottom: 7px;
+
+  color: white;
+  font-size: 0.8rem;
+}
+
+.legado li::before {
+  content: "✦";
+
+  margin-right: 10px;
+
+  color: var(--dorado);
+}
+
+.legado .imageBlock {
+  border-color: rgba(193, 154, 86, 0.6);
+  background: transparent;
+}
+
+/* =========================
+   CIERRE
+========================= */
+
+.cierre {
+  padding: 90px 20px;
+
+  text-align: center;
+
+  background: var(--marfil);
+}
+
+.comilla {
+  display: block;
+
+  color: var(--dorado);
+
+  font-family: Georgia, serif;
+  font-size: 5rem;
+
+  line-height: 0.5;
+}
+
+.cierre blockquote {
+  max-width: 800px;
+
+  margin: 25px auto 10px;
+
+  color: var(--borgona);
+
+  font-family: var(--titulo);
+
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+
+  line-height: 1.4;
+}
+
+.autor {
+  color: var(--dorado);
+
+  font-family: var(--titulo);
+  font-style: italic;
 }
 
 /* =========================
    CONTACTO
 ========================= */
 
-.contact {
-  max-width: 330px;
+.cta {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  padding: 55px max(5%, calc((100% - 1150px) / 2));
+
+  background: var(--borgona-dark);
+
+  color: white;
 }
 
-.smallTitle {
-  display: block;
-
-  margin-bottom: 12px;
-
+.cta span {
   color: var(--dorado);
 
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 700;
 
   letter-spacing: 1.5px;
 }
 
-.contact h2 {
-  margin: 0 0 22px;
+.cta h2 {
+  margin: 8px 0 0;
 
-  color: white;
+  font-family: var(--titulo);
 
-  font-family: var(--texto);
-
-  font-size: 0.95rem;
-
+  font-size: 1.8rem;
   font-weight: 400;
-
-  line-height: 1.7;
 }
 
-/* =========================
-   BOTONES
-========================= */
-
-.buttons {
-  display: flex;
-  align-items: center;
-}
-
-.button {
+.ctaButton {
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
 
-  padding: 11px 22px;
+  align-items: center;
+  gap: 25px;
+
+  padding: 12px 20px;
 
   border: 1px solid var(--dorado);
 
   color: white;
 
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 700;
 
   text-transform: uppercase;
-
-  transition:
-    background var(--transition),
-    color var(--transition);
 }
 
-.button:hover {
-  background: var(--dorado);
-
-  color: var(--borgona-dark);
-}
-
-.whatsapp {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 43px;
-  height: 43px;
-
-  border: 1px solid var(--dorado);
-
+.ctaButton strong {
   color: var(--dorado);
-
-  font-size: 1.2rem;
-
-  transition:
-    background var(--transition),
-    color var(--transition);
+  font-size: 1.1rem;
 }
 
-.whatsapp:hover {
+.ctaButton:hover {
   background: var(--dorado);
-
   color: var(--borgona-dark);
 }
 
 /* =========================
-   RESPONSIVE
+   TABLET
 ========================= */
 
-@media (max-width: 850px) {
+@media (max-width: 800px) {
+
   .container {
     grid-template-columns: 1fr;
-
-    gap: 35px;
+    gap: 40px;
   }
 
-  .separator {
-    width: 100%;
-    height: 1px;
+  .introduccion,
+  .nodarco,
+  .sanFrancisco,
+  .legado {
+    padding: 65px 0;
   }
 
-  .contact {
-    max-width: 500px;
+  .nodarco .textBlock {
+    order: 1;
+  }
+
+  .nodarco .imageBlock {
+    order: 2;
+  }
+
+  .imageBlock img {
+    height: 330px;
+  }
+
+  .obrasGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cta {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
-@media (max-width: 600px) {
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 550px) {
+
+  .hero {
+    min-height: 320px;
+  }
+
+  .heroContent h1 {
+    font-size: 3rem;
+  }
+
+  .obrasGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .imageBlock img {
+    height: 280px;
+  }
+
+  .cierre {
+    padding: 65px 20px;
+  }
+
   .cta {
-    min-height: auto;
-  }
-
-  .container {
-    padding: 55px 0;
-  }
-
-  .quote {
-    padding-left: 32px;
-  }
-
-  .quote blockquote {
-    font-size: 1.65rem;
-  }
-
-  .comillas {
-    font-size: 4rem;
+    padding: 45px 7%;
   }
 }
