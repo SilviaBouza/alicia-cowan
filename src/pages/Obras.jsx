@@ -1,5 +1,37 @@
-const Obras = () => {
-  return <h1>Obras</h1>;
-};
+import tallerImg from "../assets/taller religioso.png";
+import identidadImg from "../assets/Identidad personal1.png";
+import heroImg from "../assets/hero.png";
 
-export default Obras;
+const obras = [
+  {
+    id: 1,
+    titulo: "Restauración de imágenes",
+    lugar: "Taller Alicia Cowan",
+    descripcion:
+      "Restauración y conservación respetando la historia y los materiales originales.",
+    tecnica: "Restauración integral",
+    imagen: tallerImg,
+  },
+
+  {
+    id: 2,
+    titulo: "Arte sacro",
+    lugar: "Obra de taller",
+    descripcion:
+      "Intervenciones artesanales realizadas con sensibilidad y precisión.",
+    tecnica: "Restauración artística",
+    imagen: identidadImg,
+  },
+
+  {
+    id: 3,
+    titulo: "Trabajo artesanal",
+    lugar: "Taller Alicia Cowan",
+    descripcion:
+      "Procesos de conservación y creación aplicados al arte religioso.",
+    tecnica: "Técnica tradicional",
+    imagen: heroImg,
+  },
+];
+
+export default obras;

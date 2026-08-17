@@ -1,142 +1,347 @@
 .footer {
-  background: var(--borgona);
-  color: rgba(255,255,255,.85);
-  padding-top: 80px;
+  background: var(--marfil);
+
+  color: var(--grafito);
+
+  border-top: 1px solid var(--gris);
 }
 
 .container {
-  width: min(1200px, 90%);
-  margin: auto;
+  width: min(1250px, 90%);
+  margin: 0 auto;
 
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1.5fr;
-  gap: 50px;
+
+  grid-template-columns: 1.5fr 1fr 1.3fr 1.3fr;
+
+  gap: 55px;
+
+  padding: 65px 0;
 }
+
+/* =========================
+   MARCA
+========================= */
+
+.brand {
+  text-align: left;
+}
+
+.logo {
+  position: relative;
+
+  width: 65px;
+  height: 65px;
+
+  margin-bottom: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--dorado);
+
+  font-family: var(--titulo);
+
+  font-size: 2.6rem;
+}
+
+.logo span {
+  position: absolute;
+
+  top: 1px;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 0.65rem;
+}
+
+.logo strong {
+  font-weight: 400;
+}
+
+.brand h3 {
+  margin-bottom: 4px;
+
+  color: var(--grafito);
+
+  font-family: var(--titulo);
+
+  font-size: 1.25rem;
+  font-weight: 500;
+
+  letter-spacing: 1.5px;
+}
+
+.subtitle {
+  color: #777;
+
+  font-size: 0.55rem;
+
+  line-height: 1.6;
+
+  letter-spacing: 1.4px;
+}
+
+.decoracion {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  width: 120px;
+
+  margin: 15px 0;
+}
+
+.decoracion span {
+  flex: 1;
+
+  height: 1px;
+
+  background: var(--dorado);
+}
+
+.decoracion i {
+  color: var(--dorado);
+
+  font-style: normal;
+
+  font-size: 0.7rem;
+}
+
+/* =========================
+   REDES
+========================= */
+
+.socials {
+  display: flex;
+
+  gap: 8px;
+
+  margin-top: 18px;
+}
+
+.socials a {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--dorado);
+
+  color: var(--borgona);
+
+  font-size: 0.85rem;
+
+  transition:
+    background var(--transition),
+    color var(--transition);
+}
+
+.socials a:hover {
+  background: var(--dorado);
+
+  color: white;
+}
+
+/* =========================
+   COLUMNAS
+========================= */
 
 .column {
   display: flex;
   flex-direction: column;
 }
 
-.column h3,
 .column h4 {
-  color: var(--dorado);
+  position: relative;
+
   margin-bottom: 20px;
+  padding-bottom: 10px;
+
+  color: var(--borgona);
+
+  font-size: 0.72rem;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
 }
 
-.column p,
+.column h4::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 30px;
+  height: 1px;
+
+  background: var(--dorado);
+}
+
 .column a,
 .column span {
-  margin-bottom: 12px;
-  line-height: 1.8;
-}
+  margin-bottom: 9px;
 
-.column a {
-  color: rgba(255,255,255,.85);
-  text-decoration: none;
+  color: #555;
 
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  font-size: 0.75rem;
 
-  transition: .3s;
+  line-height: 1.5;
+
+  transition: color var(--transition);
 }
 
 .column a:hover {
+  color: var(--borgona);
+}
+
+.column p {
+  display: grid;
+
+  grid-template-columns: 18px 1fr;
+
+  gap: 8px;
+
+  margin-bottom: 10px;
+
+  color: #555;
+
+  font-size: 0.75rem;
+
+  line-height: 1.6;
+}
+
+.column p svg,
+.column a svg {
+  margin-top: 4px;
+
   color: var(--dorado);
 }
 
-.social {
-  display: flex;
-  flex-direction:row;
-  gap: 15px;
-  alin-items:center;
-  margin-top: 20px;
-}
-
-.socials a {
-  width: 48px;
-  height: 48px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  border-radius: 50%;
-
-  border: 1px solid rgba(255,255,255,.25);
-
-  color: white;
-  font-size: 1.2rem;
-
-  transition: all .3s ease;
-}
-.socials a:hover {
-  background: var(--dorado);
-  border-color: var(--dorado);
-
-  color: white;
-
-  transform: translateY(-4px);
-}
+/* =========================
+   PIE
+========================= */
 
 .bottom {
-  margin-top: 60px;
-
-  border-top: 1px solid rgba(255,255,255,.1);
-
-  padding: 25px 5%;
-
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 18px 5%;
+
+  background: var(--borgona-dark);
+
+  color: rgba(255, 255, 255, 0.7);
+
+  font-size: 0.65rem;
+}
+
+.signature {
+  color: rgba(255, 255, 255, 0.55);
 }
 
 .topButton {
-  width: 45px;
-  height: 45px;
+  width: 38px;
+  height: 38px;
 
-  border: none;
-  border-radius: 50%;
+  flex-shrink: 0;
 
-  background: var(--dorado);
-  color: white;
+  border: 1px solid var(--dorado);
+
+  background: transparent;
+
+  color: var(--dorado);
 
   cursor: pointer;
 
-  transition: .3s;
+  transition:
+    background var(--transition),
+    color var(--transition),
+    transform var(--transition);
 }
 
 .topButton:hover {
-  transform: translateY(-5px);
+  background: var(--dorado);
+
+  color: var(--borgona-dark);
+
+  transform: translateY(-3px);
 }
 
-@media (max-width: 992px) {
+/* =========================
+   RESPONSIVE
+========================= */
 
+@media (max-width: 950px) {
   .container {
     grid-template-columns: 1fr 1fr;
   }
 
+  .brand {
+    grid-column: span 2;
+  }
 }
 
-@media (max-width: 768px) {
-
+@media (max-width: 600px) {
   .container {
     grid-template-columns: 1fr;
+
+    gap: 35px;
+
+    padding: 50px 0;
+  }
+
+  .brand {
+    grid-column: auto;
+
     text-align: center;
   }
 
-  .column a {
+  .logo {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .decoracion {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .socials {
     justify-content: center;
   }
 
-  .social {
+  .column {
+    text-align: center;
+  }
+
+  .column h4::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .column p {
+    display: flex;
     justify-content: center;
+    align-items: flex-start;
+  }
+
+  .column p svg {
+    flex-shrink: 0;
   }
 
   .bottom {
     flex-direction: column;
-    gap: 20px;
-  }
 
+    text-align: center;
+  }
 }

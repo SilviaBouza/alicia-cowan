@@ -2,88 +2,281 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: var(--marfil);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  background: var(--borgona-dark);
+  border-bottom: 1px solid rgba(193, 154, 86, 0.22);
 }
 
 .container {
-  max-width: 1280px;
+  width: min(1400px, 94%);
+  min-height: 88px;
   margin: 0 auto;
-  padding: 18px 40px;
 
   display: flex;
-  justify-content: space-between;
   align-items: center;
-}
+  justify-content: space-between;
 
-.logo {
-  text-decoration: none;
-}
-
-.logo h1 {
-  font-family: var(--titulo);
-  color: var(--borgona);
-  font-size: 2rem;
-  margin: 0;
-}
-
-.logo span {
-  color: var(--grafito);
-  font-size: .85rem;
-  letter-spacing: 2px;
-}
-
-.nav {
-  display: flex;
   gap: 35px;
 }
 
-.link {
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  color: white;
   text-decoration: none;
-  color: var(--grafito);
-  transition: .3s;
-  font-weight: 500;
+
+  flex-shrink: 0;
 }
 
-.link:hover {
+.logoMarca {
+  position: relative;
+
+  font-family: var(--titulo);
+  font-size: 2.6rem;
+  line-height: 1;
+
+  color: var(--dorado);
+  letter-spacing: -5px;
+}
+
+.cruz {
+  position: absolute;
+  top: -13px;
+  left: 16px;
+
+  font-family: Arial, sans-serif;
+  font-size: 0.75rem;
+
+  letter-spacing: 0;
+}
+
+.logoTexto {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.logoTexto strong {
+  font-family: var(--titulo);
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+}
+
+.logoTexto small {
+  font-family: var(--texto);
+  font-size: 0.52rem;
+  letter-spacing: 1.5px;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+/* =========================
+   NAVEGACIÓN
+========================= */
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 27px;
+}
+
+.link,
+.active {
+  position: relative;
+
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+
+  padding: 34px 0 31px;
+
+  transition:
+    color var(--transition),
+    opacity var(--transition);
+}
+
+.link:hover,
+.active {
   color: var(--dorado);
 }
 
-.active {
-  color: var(--borgona);
-  text-decoration: none;
-  font-weight: 700;
+.active::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 21px;
+
+  height: 1px;
+
+  background: var(--dorado);
 }
 
+/* =========================
+   BOTÓN CONTACTAR
+========================= */
+
 .button {
-  text-decoration: none;
-  background: var(--borgona);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  min-width: 130px;
+
+  padding: 10px 15px;
+
   color: white;
-  padding: 12px 22px;
-  border-radius: 8px;
-  transition: .3s;
+  text-decoration: none;
+
+  border: 1px solid var(--dorado);
+
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+
+  transition:
+    background var(--transition),
+    color var(--transition);
 }
 
 .button:hover {
   background: var(--dorado);
+  color: var(--borgona-dark);
 }
 
-@media (max-width: 900px) {
+.whatsappIcon {
+  color: var(--dorado);
+  font-size: 1.15rem;
+}
 
-  .container {
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-  }
+.button:hover .whatsappIcon {
+  color: var(--borgona-dark);
+}
 
+/* =========================
+   MENÚ MÓVIL
+========================= */
+
+.menuButton {
+  display: none;
+
+  width: 42px;
+  height: 42px;
+
+  padding: 8px;
+
+  border: 1px solid rgba(193, 154, 86, 0.5);
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.menuButton span {
+  display: block;
+
+  width: 100%;
+  height: 2px;
+
+  margin: 5px 0;
+
+  background: var(--dorado);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
   .nav {
-    flex-wrap: wrap;
-    justify-content: center;
     gap: 18px;
   }
 
-  .button {
+  .link,
+  .active {
+    font-size: 0.72rem;
+  }
+
+  .logoTexto strong {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    min-height: 78px;
+  }
+
+  .menuButton {
+    display: block;
+  }
+
+  .nav {
+    position: absolute;
+    top: 78px;
+    left: 0;
+
     width: 100%;
+
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+
+    padding: 20px;
+
+    background: var(--borgona-dark);
+
+    border-top: 1px solid rgba(193, 154, 86, 0.25);
+  }
+
+  .navAbierto {
+    display: flex;
+  }
+
+  .link,
+  .active {
+    padding: 12px 5px;
+
     text-align: center;
+
+    font-size: 0.85rem;
+  }
+
+  .active::after {
+    bottom: 3px;
+  }
+
+  .button {
+    margin-top: 8px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 92%;
+  }
+
+  .logoMarca {
+    font-size: 2.2rem;
+  }
+
+  .logoTexto strong {
+    font-size: 0.95rem;
+  }
+
+  .logoTexto small {
+    font-size: 0.45rem;
   }
 }

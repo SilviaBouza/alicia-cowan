@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import {
   FaMapMarkerAlt,
@@ -26,81 +26,119 @@ const Footer = () => {
 
   return (
     <footer className={styles.footer}>
+
       <div className={styles.container}>
 
-        {/* Información */}
-        <div className={styles.column}>
-          <h3>Alicia Cowan</h3>
+        {/* Marca */}
+        <div className={styles.brand}>
 
-          <p>
-            Restauración, conservación y creación de arte
-            religioso, respetando la historia y el valor
-            artístico de cada obra.
+          <div className={styles.logo}>
+            <span>✚</span>
+            <strong>AC</strong>
+          </div>
+
+          <h3>
+            ALICIA COWAN
+          </h3>
+
+          <p className={styles.subtitle}>
+            TALLER DE RESTAURACIÓN
+            <br />
+            Y ARTE SACRO
           </p>
 
+          <div className={styles.decoracion}>
+            <span></span>
+            <i>✦</i>
+            <span></span>
+          </div>
+
           <div className={styles.socials}>
-          <a
-            href="https://www.facebook.com/Alicia.Beatriz.Cowan/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Facebook"
-          >
-            <FaFacebookF />
-          </a>
 
-          <a
-            href="https://instagram.com/aliciabcowan/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram"
-          >
-            <FaInstagram />
-          </a>
+            <a
+              href="https://instagram.com/aliciabcowan/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <FaInstagram />
+            </a>
 
-          <a
-            href="https://www.pinterest.com/aliciabcowan/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Pinterest"
-          >
-            <FaPinterestP />
-          </a>
+            <a
+              href="https://www.facebook.com/Alicia.Beatriz.Cowan/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
+              <FaFacebookF />
+            </a>
 
-          <a
-            href="https://www.tiktok.com/@ali.cowan/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="TikTok"
-          >
-            <FaTiktok />
-          </a>
+            <a
+              href="https://www.pinterest.com/aliciabcowan/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Pinterest"
+            >
+              <FaPinterestP />
+            </a>
+
+            <a
+              href="https://www.tiktok.com/@ali.cowan/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="TikTok"
+            >
+              <FaTiktok />
+            </a>
+
+          </div>
+
         </div>
-                </div>
 
-        {/* Navegación */}
+        {/* Enlaces */}
         <div className={styles.column}>
-          <h4>Navegación</h4>
 
-          <NavLink to="/">Inicio</NavLink>
-          <NavLink to="/historia">Historia</NavLink>
-          <NavLink to="/obras">Obras</NavLink>
-          <NavLink to="/servicios">Servicios</NavLink>
-          <NavLink to="/contacto">Contacto</NavLink>
+          <h4>Enlaces</h4>
+
+          <Link to="/#taller">
+            El Taller
+          </Link>
+
+          <Link to="/servicios">
+            Servicios
+          </Link>
+
+          <Link to="/obras">
+            Obras
+          </Link>
+
+          <Link to="/historia">
+            Historia
+          </Link>
+
+          <Link to="/contacto">
+            Contacto
+          </Link>
+
         </div>
 
         {/* Servicios */}
         <div className={styles.column}>
+
           <h4>Servicios</h4>
 
-          <span>Restauración</span>
-          <span>Conservación</span>
-          <span>Escultura</span>
-          <span>Pintura</span>
-          <span>Dorado</span>
+          <span>Restauración de imágenes</span>
+          <span>Restauración de esculturas</span>
+          <span>Dorado a la hoja</span>
+          <span>Policromía</span>
+          <span>Réplicas</span>
+          <span>Obras por encargo</span>
+
         </div>
 
         {/* Contacto */}
         <div className={styles.column}>
+
           <h4>Contacto</h4>
 
           <p>
@@ -110,37 +148,55 @@ const Footer = () => {
             Buenos Aires, Argentina
           </p>
 
-
           <a
-            href="https://wa.me/+5491162948947"
-            target="_blank"
-            rel="noreferrer"
+            href="tel:+5491162948947"
           >
-            <FaWhatsapp />
-            +54911 6294-8947
+            <FaPhoneAlt />
+            +54 9 11 6294-8947
           </a>
 
-          <a href="mailto:aliciabcowan@gmail.com">
+          <a
+            href="mailto:aliciabcowan@gmail.com"
+          >
             <FaEnvelope />
             aliciabcowan@gmail.com
           </a>
+
+          <a
+            href="https://wa.me/5491162948947"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaWhatsapp />
+            WhatsApp
+          </a>
+
         </div>
 
       </div>
 
-      {/* Parte inferior */}
+      {/* Pie */}
       <div className={styles.bottom}>
+
         <p>
-          © {year} Alicia Cowan · Todos los derechos reservados
+          © {year} Alicia Cowan · Taller de Restauración y Arte Sacro.
+          Todos los derechos reservados.
+        </p>
+
+        <p className={styles.signature}>
+          Diseñado con pasión por el arte y el patrimonio.
         </p>
 
         <button
           className={styles.topButton}
           onClick={scrollTop}
+          aria-label="Volver arriba"
         >
           <FaArrowUp />
         </button>
+
       </div>
+
     </footer>
   );
 };

@@ -15,16 +15,16 @@
 
 .subtitle{
 
-    color:#D4AF37;
+    color:var(--dorado);
     font-size:.9rem;
     letter-spacing:2px;
     text-transform:uppercase;
 
 }
 
-h2{
+ .container h2{
 
-    color:#4B2E83;
+    color:var(--borgona);
     font-size:2.5rem;
     margin:15px 0;
 
@@ -34,13 +34,13 @@ h2{
 
     width:90px;
     height:4px;
-    background:#D4AF37;
+    background:var(--dorado);
     margin:20px auto 40px;
     border-radius:20px;
 
 }
 
-p{
+ .container p{
 
     max-width:850px;
     margin:auto;
@@ -55,7 +55,7 @@ p{
 
     display:inline-block;
     margin-top:20px;
-    background:#4B2E83;
+    background:var(--borgona);
     color:white;
     text-decoration:none;
     padding:15px 38px;
@@ -66,20 +66,20 @@ p{
 
 .button:hover{
 
-    background:#D4AF37;
-    color:#4B2E83;
+    background:var(--dorado);
+    color:var(--borgona);
 
 }
 
 @media(max-width:768px){
 
-h2{
+ .container h2{
 
 font-size:2rem;
 
 }
 
-p{
+ .container p{
 
 font-size:1rem;
 

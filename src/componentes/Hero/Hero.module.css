@@ -1,133 +1,311 @@
 .hero {
-  min-height: 85vh;
+  position: relative;
 
-  background: linear-gradient(
-      rgba(74,20,28,.72),
-      rgba(74,20,28,.72)
-    ),
-    url("/hero.jpg");
+  min-height: calc(100vh - 88px);
+
+  display: flex;
+  align-items: center;
 
   background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
+
+  overflow: hidden;
+}
+
+/* Capa oscura sobre la fotografía */
+
+.overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(34, 8, 12, 0.96) 0%,
+      rgba(55, 13, 19, 0.86) 38%,
+      rgba(35, 10, 12, 0.38) 70%,
+      rgba(20, 6, 8, 0.25) 100%
+    );
+}
+
+/* Contenedor */
+
+.container {
+  position: relative;
+  z-index: 2;
+
+  width: min(1400px, 94%);
+  margin: 0 auto;
+
+  min-height: calc(100vh - 88px);
 
   display: flex;
   align-items: center;
 }
 
-.overlay {
-  width: 100%;
-}
+/* Contenido */
 
 .content {
-  max-width: 700px;
+  max-width: 720px;
 
-  margin-left: 10%;
-
-  color: white;
+  padding: 70px 0;
 }
 
-.subtitle {
+/* Pequeño título superior */
+
+.eyebrow {
+  display: block;
+
+  margin-bottom: 18px;
+
   color: var(--dorado);
 
-  text-transform: uppercase;
+  font-size: 0.78rem;
+  font-weight: 700;
 
   letter-spacing: 3px;
-
-  margin-bottom: 15px;
 }
+
+/* Decoración */
+
+.decoracion {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  width: 310px;
+
+  margin-bottom: 22px;
+}
+
+.decoracion span {
+  width: 105px;
+  height: 1px;
+
+  background: var(--dorado);
+}
+
+.decoracion i {
+  color: var(--dorado);
+
+  font-size: 1.15rem;
+  font-style: normal;
+}
+
+/* Título */
 
 .content h1 {
+  margin: 0 0 25px;
+
+  color: white;
+
   font-family: var(--titulo);
 
-  font-size: 4rem;
-
-  margin-bottom: 10px;
-}
-
-.content h2 {
-  font-size: 1.8rem;
-
+  font-size: clamp(3rem, 5vw, 5rem);
   font-weight: 400;
 
-  margin-bottom: 25px;
+  line-height: 1.05;
+
+  letter-spacing: -1px;
 }
+
+.content h1 em {
+  color: var(--dorado);
+  font-style: italic;
+}
+
+/* Descripción */
 
 .description {
-  font-size: 1.1rem;
+  max-width: 560px;
 
+  margin-bottom: 38px;
+
+  color: rgba(255, 255, 255, 0.88);
+
+  font-size: 1.05rem;
   line-height: 1.8;
-
-  margin-bottom: 35px;
 }
+
+/* Botones */
 
 .buttons {
   display: flex;
-
-  gap: 20px;
+  align-items: center;
+  gap: 16px;
 }
 
 .primary,
 .secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+
+  min-width: 160px;
+
+  padding: 15px 24px;
 
   text-decoration: none;
 
-  padding: 15px 30px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
 
-  border-radius: 8px;
-
-  transition: .3s;
+  transition:
+    transform var(--transition),
+    background var(--transition),
+    color var(--transition);
 }
 
 .primary {
-
-  background: var(--dorado);
-
+  background: var(--borgona);
   color: white;
+
+  border: 1px solid var(--borgona);
 }
 
 .primary:hover {
+  background: var(--dorado);
+  border-color: var(--dorado);
 
-  transform: translateY(-3px);
+  color: var(--borgona-dark);
+
+  transform: translateY(-2px);
 }
 
 .secondary {
+  color: var(--dorado);
 
-  border: 2px solid white;
-
-  color: white;
+  border: 1px solid var(--dorado);
+  background: transparent;
 }
 
 .secondary:hover {
+  background: var(--dorado);
+  color: var(--borgona-dark);
 
-  background: white;
-
-  color: var(--borgona);
+  transform: translateY(-2px);
 }
 
-@media (max-width:768px){
+/* Indicadores laterales */
 
-.content{
+.indicadores {
+  position: absolute;
 
-margin:40px;
+  right: 0;
+  top: 50%;
 
+  transform: translateY(-50%);
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  color: rgba(255, 255, 255, 0.55);
+
+  font-size: 0.8rem;
 }
 
-.content h1{
+.indicadores span {
+  position: relative;
 
-font-size:2.8rem;
-
+  padding: 5px 0;
 }
 
-.content h2{
-
-font-size:1.3rem;
-
+.indicadorActivo {
+  color: var(--dorado);
 }
 
-.buttons{
+.indicadorActivo::after {
+  content: "";
 
-flex-direction:column;
+  position: absolute;
 
+  right: -1px;
+  bottom: -10px;
+
+  width: 1px;
+  height: 25px;
+
+  background: var(--dorado);
 }
 
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+  .hero {
+    min-height: 80vh;
+  }
+
+  .container {
+    min-height: 80vh;
+  }
+
+  .content {
+    max-width: 650px;
+    padding: 60px 0;
+  }
+
+  .indicadores {
+    display: none;
+  }
+}
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+  .hero {
+    min-height: 78vh;
+
+    background-position: 62% center;
+  }
+
+  .container {
+    width: 90%;
+    min-height: 78vh;
+  }
+
+  .content {
+    padding: 45px 0;
+  }
+
+  .eyebrow {
+    font-size: 0.68rem;
+    letter-spacing: 2px;
+  }
+
+  .decoracion {
+    width: 210px;
+  }
+
+  .decoracion span {
+    width: 70px;
+  }
+
+  .content h1 {
+    font-size: 2.75rem;
+    line-height: 1.08;
+  }
+
+  .description {
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .primary,
+  .secondary {
+    width: 100%;
+  }
 }

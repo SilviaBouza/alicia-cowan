@@ -1,47 +1,70 @@
 import { Link } from "react-router-dom";
 import styles from "./Hero.module.css";
+import heroImage from "../../assets/taller religioso.png";
 
 const Hero = () => {
   return (
-    <section className={styles.hero}>
-      <div className={styles.overlay}>
+    <section
+      className={styles.hero}
+      style={{ backgroundImage: `url("${heroImage}")` }}
+    >
+      <div className={styles.overlay}></div>
+
+      <div className={styles.container}>
+
         <div className={styles.content}>
 
-          <p className={styles.subtitle}>
-            Taller Artístico Religioso
-          </p>
+          <span className={styles.eyebrow}>
+            TALLER ARTÍSTICO RELIGIOSO
+          </span>
+
+          <div className={styles.decoracion}>
+            <span></span>
+            <i>✦</i>
+            <span></span>
+          </div>
 
           <h1>
-            Alicia Cowan
+            Preservamos lo sagrado.
+            <br />
+            Restauramos{" "}
+            <em>historia.</em>
           </h1>
 
-          <h2>
-            Restauración y creación de arte religioso
-          </h2>
-
           <p className={styles.description}>
-            Cada obra recibe un tratamiento artesanal,
-            respetando su historia, su significado y su
-            valor espiritual.
+            Más de tres décadas dedicadas a la restauración
+            y conservación de imágenes religiosas,
+            esculturas y obras de arte sacro.
           </p>
 
           <div className={styles.buttons}>
+
             <Link
               to="/obras"
               className={styles.primary}
             >
               Ver obras
+              <span>→</span>
             </Link>
 
             <Link
-              to="/contacto"
+              to="/#taller"
               className={styles.secondary}
             >
-              Contactar
+              Conocer el taller
+              <span>→</span>
             </Link>
+
           </div>
 
         </div>
+
+        <div className={styles.indicadores}>
+          <span className={styles.indicadorActivo}>01</span>
+          <span>02</span>
+          <span>03</span>
+        </div>
+
       </div>
     </section>
   );

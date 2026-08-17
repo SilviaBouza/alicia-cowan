@@ -1,20 +1,25 @@
 import Hero from "../componentes/Hero/Hero";
-import About from "../componentes/About/About";
+//import About from "../componentes/About/About";
 import Services from "../componentes/Services/Services";
 import Gallery from "../componentes/Gallery/Gallery";
-import Procesos from "../componentes/Procesos/Procesos.jsx";
-import Biography from "../componentes/Biography/Biography";
+import Biografia from "./Biografia";
 
 const Home = () => {
   return (
     <>
       <Hero />
-      <About />
-      <Services />
-      <Gallery />
-      <Procesos />
-      <Biography />
+
       
+
+      <div id="servicios">
+        <Services />
+      </div>
+
+      <div id="proyectos">
+        <Gallery />
+      </div>
+
+      <Biografia />
     </>
   );
 };

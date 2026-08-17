@@ -1,102 +1,251 @@
-.gallery{
-  background:white;
+.gallery {
+  padding: 90px 0 105px;
+
+  background: var(--marfil);
 }
 
-.grid{
-
-display:grid;
-
-grid-template-columns:
-repeat(auto-fit,minmax(320px,1fr));
-
-gap:35px;
-
+.container {
+  width: min(1250px, 90%);
+  margin: 0 auto;
 }
 
-.card{
+/* =========================
+   ENCABEZADO
+========================= */
 
-overflow:hidden;
+.heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
 
-border-radius:16px;
-
-background:white;
-
-box-shadow:var(--shadow-sm);
-
-transition:.35s;
-
+  margin-bottom: 30px;
 }
 
-.card:hover{
+.subtitle {
+  color: var(--dorado);
 
-transform:
-translateY(-8px);
+  font-size: 0.75rem;
+  font-weight: 700;
 
-box-shadow:
-var(--shadow-md);
+  letter-spacing: 2px;
 
+  text-transform: uppercase;
 }
 
-.card img{
+.titleDecor {
+  display: flex;
+  align-items: center;
 
-width:100%;
-
-height:320px;
-
-object-fit:cover;
-
-transition:.4s;
-
+  margin-top: 10px;
 }
 
-.card:hover img{
+.titleDecor span {
+  width: 55px;
+  height: 1px;
 
-transform:scale(1.05);
-
+  background: var(--dorado);
 }
 
-.info{
+.allLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
 
-padding:25px;
+  color: var(--borgona);
 
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  text-transform: uppercase;
 }
 
-.info h3{
+.allLink span {
+  color: var(--dorado);
 
-margin-bottom:15px;
-
-color:var(--borgona);
-
+  font-size: 1.1rem;
 }
 
-.info p{
-
-line-height:1.7;
-
-margin-bottom:25px;
-
+.allLink:hover {
+  color: var(--dorado);
 }
 
-.info button{
+/* =========================
+   GRID
+========================= */
 
-padding:12px 24px;
+.grid {
+  display: grid;
 
-background:var(--borgona);
+  grid-template-columns: repeat(3, 1fr);
 
-color:white;
-
-border:none;
-
-border-radius:8px;
-
-cursor:pointer;
-
-transition:.3s;
-
+  gap: 18px;
 }
 
-.info button:hover{
+/* =========================
+   CARD
+========================= */
 
-background:var(--dorado);
+.card {
+  overflow: hidden;
 
+  background: white;
+
+  border: 1px solid #e5e0d8;
+
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+
+  box-shadow: var(--shadow-md);
+}
+
+/* =========================
+   IMAGEN
+========================= */
+
+.imageWrapper {
+  height: 260px;
+
+  overflow: hidden;
+
+  background: var(--gris);
+}
+
+.imageWrapper img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.5s ease;
+}
+
+.card:hover .imageWrapper img {
+  transform: scale(1.04);
+}
+
+/* =========================
+   INFORMACIÓN
+========================= */
+
+.info {
+  padding: 18px 18px 14px;
+}
+
+.info h3 {
+  margin-bottom: 5px;
+
+  color: var(--grafito);
+
+  font-family: var(--texto);
+
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.lugar {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: var(--borgona);
+
+  font-size: 0.68rem;
+  font-weight: 600;
+}
+
+.info p {
+  min-height: 42px;
+
+  margin-bottom: 15px;
+
+  color: #666;
+
+  font-size: 0.73rem;
+
+  line-height: 1.5;
+}
+
+/* =========================
+   PIE DE TARJETA
+========================= */
+
+.footerCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-top: 12px;
+
+  border-top: 1px solid var(--gris);
+}
+
+.footerCard span {
+  color: #777;
+
+  font-size: 0.65rem;
+}
+
+.footerCard button {
+  width: 30px;
+  height: 30px;
+
+  border: 1px solid var(--gris);
+
+  background: transparent;
+
+  color: var(--dorado);
+
+  font-size: 1.2rem;
+
+  cursor: pointer;
+
+  transition:
+    background var(--transition),
+    color var(--transition);
+}
+
+.footerCard button:hover {
+  background: var(--dorado);
+
+  color: white;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 850px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+  .gallery {
+    padding: 70px 0;
+  }
+
+  .heading {
+    align-items: flex-start;
+    flex-direction: column;
+
+    gap: 18px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .imageWrapper {
+    height: 280px;
+  }
 }
