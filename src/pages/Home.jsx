@@ -1,5 +1,5 @@
 import Hero from "../componentes/Hero/Hero";
-//import About from "../componentes/About/About";
+import About from "../componentes/About/About";
 import Services from "../componentes/Services/Services";
 import Gallery from "../componentes/Gallery/Gallery";
 import Biografia from "./Biografia";
@@ -7,21 +7,31 @@ import Biografia from "./Biografia";
 const Home = () => {
   return (
     <>
+      {/* INICIO */}
       <Hero />
 
-      
+      {/* EL TALLER */}
+      <section id="taller">
+        <About />
+      </section>
 
-      <div id="servicios">
+      {/* SERVICIOS */}
+      <section id="servicios">
         <Services />
-      </div>
+      </section>
 
-      <div id="proyectos">
+      {/* PROYECTOS */}
+      <section id="proyectos">
         <Gallery />
-      </div>
+      </section>
 
-      <Biografia />
+      {/* HISTORIA */}
+      <section id="historia">
+        <Biografia />
+      </section>
     </>
   );
 };
 
 export default Home;
+

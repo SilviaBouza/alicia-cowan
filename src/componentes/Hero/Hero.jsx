@@ -1,8 +1,35 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./Hero.module.css";
 import heroImage from "../../assets/taller religioso.png";
 
 const Hero = () => {
+  const navigate = useNavigate();
+
+  const irAlTaller = () => {
+    // Primero volvemos al inicio
+    navigate("/");
+
+    // Esperamos a que Home se renderice
+    setTimeout(() => {
+      const elemento = document.getElementById("taller");
+
+      if (elemento) {
+        const header = document.querySelector("header");
+        const alturaHeader = header ? header.offsetHeight : 0;
+
+        const posicion =
+          elemento.getBoundingClientRect().top +
+          window.scrollY -
+          alturaHeader;
+
+        window.scrollTo({
+          top: posicion,
+          behavior: "smooth",
+        });
+      }
+    }, 100);
+  };
+
   return (
     <section
       className={styles.hero}
@@ -39,6 +66,7 @@ const Hero = () => {
 
           <div className={styles.buttons}>
 
+            {/* VER OBRAS */}
             <Link
               to="/obras"
               className={styles.primary}
@@ -47,13 +75,15 @@ const Hero = () => {
               <span>→</span>
             </Link>
 
-            <Link
-              to="/#taller"
+            {/* CONOCER EL TALLER */}
+            <button
+              type="button"
               className={styles.secondary}
+              onClick={irAlTaller}
             >
               Conocer el taller
               <span>→</span>
-            </Link>
+            </button>
 
           </div>
 

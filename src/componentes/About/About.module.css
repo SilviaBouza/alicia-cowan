@@ -1,0 +1,432 @@
+.about {
+  position: relative;
+  width: 100%;
+  background: #faf7f0;
+  overflow: hidden;
+}
+
+/* CONTENEDOR PRINCIPAL */
+
+.container {
+  width: 100%;
+  max-width: 1500px;
+  min-height: 350px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 43% 57%;
+
+  align-items: stretch;
+}
+
+
+/* =========================================
+   ORNAMENTO LATERAL
+========================================= */
+
+.ornament {
+  position: absolute;
+  left: -25px;
+  top: 0;
+  width: 120px;
+  height: 100%;
+  opacity: 0.18;
+
+  background-image: url("../../assets/historia-inicio.jpg");
+  background-size: cover;
+  background-position: center;
+
+  mask-image: linear-gradient(
+    to right,
+    black,
+    transparent
+  );
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   BLOQUE DE TEXTO
+========================================= */
+
+.textContent {
+  position: relative;
+  z-index: 2;
+
+  padding: 38px 45px 35px 110px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+/* "EL TALLER" */
+
+.label {
+  display: block;
+
+  font-family: var(--texto);
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  color: #a36d28;
+
+  margin-bottom: 8px;
+}
+
+
+/* Línea junto al título pequeño */
+
+.titleLine {
+  display: none;
+}
+
+
+/* TÍTULO */
+
+.textContent h2 {
+  margin: 0;
+
+  max-width: 470px;
+
+  font-family: var(--titulo);
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 1.12;
+
+  color: #343434;
+}
+
+
+/* PEQUEÑA LÍNEA DORADA */
+
+.smallLine {
+  width: 25px;
+  height: 1px;
+
+  background: #c19a56;
+
+  margin: 14px 0 15px;
+}
+
+
+/* PÁRRAFO */
+
+.textContent p {
+  max-width: 455px;
+
+  margin: 0 0 20px;
+
+  font-family: var(--texto);
+  font-size: 12px;
+  line-height: 1.65;
+
+  color: #444;
+}
+
+
+/* =========================================
+   BOTÓN
+========================================= */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: fit-content;
+  min-width: 215px;
+
+  padding: 11px 15px;
+
+  border: 1px solid #c19a56;
+
+  background: transparent;
+
+  color: #343434;
+
+  text-decoration: none;
+
+  font-family: var(--texto);
+  font-size: 9px;
+  font-weight: 600;
+
+  letter-spacing: 0.7px;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.button span {
+  margin-left: 18px;
+
+  font-size: 18px;
+  font-weight: 300;
+
+  color: #c19a56;
+}
+
+.button:hover {
+  background: #c19a56;
+  color: #fff;
+}
+
+.button:hover span {
+  color: #fff;
+}
+
+
+/* =========================================
+   PARTE VISUAL
+========================================= */
+
+.visual {
+  display: grid;
+
+  grid-template-columns: minmax(0, 1fr) 120px;
+
+  min-height: 350px;
+}
+
+
+/* =========================================
+   IMAGEN
+========================================= */
+
+.imageWrapper {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+}
+
+.imageWrapper img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  filter: saturate(0.9);
+
+  transition: transform 0.6s ease;
+}
+
+.imageWrapper:hover img {
+  transform: scale(1.025);
+}
+
+
+/* =========================================
+   PANEL 30+
+========================================= */
+
+.experience {
+  background: #4a141c;
+
+  min-height: 100%;
+
+  padding: 25px 12px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  color: #faf7f0;
+}
+
+
+/* ICONO */
+
+.icon {
+  width: 30px;
+  height: 30px;
+
+  margin-bottom: 7px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #c19a56;
+
+  font-size: 25px;
+}
+
+
+/* 30+ */
+
+.number {
+  font-family: var(--titulo);
+
+  font-size: 39px;
+  line-height: 1;
+
+  font-weight: 400;
+
+  color: #c19a56;
+}
+
+
+/* AÑOS */
+
+.years {
+  margin-top: 5px;
+
+  font-family: var(--texto);
+
+  font-size: 7px;
+  font-weight: 600;
+
+  letter-spacing: 0.3px;
+
+  color: #faf7f0;
+}
+
+
+/* SEPARADOR */
+
+.divider {
+  width: 45px;
+  height: 1px;
+
+  background: #c19a56;
+
+  margin: 17px 0;
+}
+
+
+/* TEXTO PANEL */
+
+.experience p {
+  margin: 0;
+
+  font-family: var(--texto);
+
+  font-size: 8px;
+
+  line-height: 1.7;
+
+  letter-spacing: 0.3px;
+
+  color: #faf7f0;
+}
+
+
+/* SÍMBOLO FINAL */
+
+.decorativeSymbol {
+  margin-top: 12px;
+
+  color: #c19a56;
+
+  font-size: 15px;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+  .container {
+    grid-template-columns: 45% 55%;
+  }
+
+  .textContent {
+    padding-left: 60px;
+    padding-right: 30px;
+  }
+
+  .textContent h2 {
+    font-size: 30px;
+  }
+
+  .visual {
+    grid-template-columns: minmax(0, 1fr) 105px;
+  }
+
+}
+
+
+/* =========================================
+   TABLET PEQUEÑA
+========================================= */
+
+@media (max-width: 800px) {
+
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .textContent {
+    padding: 50px 30px;
+  }
+
+  .textContent h2 {
+    max-width: 600px;
+    font-size: 32px;
+  }
+
+  .textContent p {
+    max-width: 600px;
+  }
+
+  .visual {
+    min-height: 380px;
+  }
+
+  .ornament {
+    display: none;
+  }
+
+}
+
+
+/* =========================================
+   CELULAR
+========================================= */
+
+@media (max-width: 550px) {
+
+  .textContent {
+    padding: 40px 25px;
+  }
+
+  .textContent h2 {
+    font-size: 28px;
+  }
+
+  .textContent p {
+    font-size: 12px;
+  }
+
+  .visual {
+    grid-template-columns: 1fr;
+  }
+
+  .imageWrapper {
+    height: 300px;
+  }
+
+  .experience {
+    min-height: 230px;
+
+    padding: 30px;
+  }
+
+}

@@ -1,0 +1,491 @@
+/* =========================================
+   TALLER
+========================================= */
+
+.taller {
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+
+  background: #faf7f0;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+}
+
+
+/* =========================================
+   ORNAMENTO LATERAL
+========================================= */
+
+.ornamento {
+  position: absolute;
+
+  left: -80px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 190px;
+  height: 420px;
+
+  opacity: 0.18;
+
+  background-image:
+    radial-gradient(
+      ellipse at center,
+      transparent 35%,
+      #c19a56 36%,
+      transparent 38%
+    );
+
+  background-size: 45px 45px;
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   CONTENEDOR PRINCIPAL
+========================================= */
+
+.contenedor {
+  position: relative;
+
+  width: min(1180px, 92%);
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(360px, 0.9fr)
+    minmax(500px, 1.4fr);
+
+  align-items: center;
+
+  gap: 45px;
+
+  z-index: 2;
+}
+
+
+/* =========================================
+   CONTENIDO IZQUIERDO
+========================================= */
+
+.contenido {
+  padding: 45px 0 45px 30px;
+
+  max-width: 470px;
+}
+
+
+/* =========================================
+   ETIQUETA
+========================================= */
+
+.etiqueta {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: #c19a56;
+
+  font-family: "Lato", sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.8px;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================
+   TITULO
+========================================= */
+
+.titulo {
+  margin: 0;
+
+  color: #4a141c;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(32px, 3vw, 44px);
+
+  font-weight: 500;
+
+  line-height: 1.12;
+
+  letter-spacing: -0.5px;
+}
+
+
+/* =========================================
+   LINEA DORADA
+========================================= */
+
+.linea {
+  width: 28px;
+
+  height: 1px;
+
+  margin: 20px 0;
+
+  background: #c19a56;
+}
+
+
+/* =========================================
+   DESCRIPCION
+========================================= */
+
+.descripcion {
+  max-width: 410px;
+
+  margin: 0 0 25px;
+
+  color: #343434;
+
+  font-family: "Lato", sans-serif;
+
+  font-size: 13px;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================
+   BOTON
+========================================= */
+
+.boton {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 10px 15px;
+
+  border: 1px solid #c19a56;
+
+  background: transparent;
+
+  color: #4a141c;
+
+  font-family: "Lato", sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+
+  text-decoration: none;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.boton span {
+  font-size: 17px;
+
+  line-height: 0;
+}
+
+.boton:hover {
+  background: #6e1f2a;
+
+  color: #faf7f0;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   AREA VISUAL
+========================================= */
+
+.visual {
+  display: grid;
+
+  grid-template-columns: 1fr 125px;
+
+  min-height: 390px;
+
+  box-shadow: 0 8px 30px rgba(52, 52, 52, 0.08);
+}
+
+
+/* =========================================
+   IMAGEN
+========================================= */
+
+.imagenWrapper {
+  position: relative;
+
+  min-height: 390px;
+
+  overflow: hidden;
+}
+
+.imagen {
+  width: 100%;
+  height: 100%;
+
+  min-height: 390px;
+
+  display: block;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  transition: transform 0.7s ease;
+}
+
+.visual:hover .imagen {
+  transform: scale(1.025);
+}
+
+
+/* =========================================
+   PANEL BORDO
+========================================= */
+
+.panel {
+  min-height: 390px;
+
+  padding: 25px 15px;
+
+  background: #6e1f2a;
+
+  color: #faf7f0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+}
+
+
+/* =========================================
+   ICONO
+========================================= */
+
+.icono {
+  width: 30px;
+  height: 30px;
+
+  margin-bottom: 8px;
+
+  color: #c19a56;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 25px;
+
+  line-height: 30px;
+}
+
+
+/* =========================================
+   NUMERO
+========================================= */
+
+.numero {
+  display: block;
+
+  color: #d1ad6c;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 38px;
+
+  font-weight: 400;
+
+  line-height: 1;
+}
+
+
+/* =========================================
+   TRAYECTORIA
+========================================= */
+
+.trayectoria {
+  margin-top: 7px;
+
+  color: #faf7f0;
+
+  font-family: "Lato", sans-serif;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  line-height: 1.5;
+
+  letter-spacing: 1px;
+}
+
+
+/* =========================================
+   SEPARADOR
+========================================= */
+
+.separador {
+  width: 30px;
+
+  height: 1px;
+
+  margin: 20px 0;
+
+  background: rgba(193, 154, 86, 0.8);
+}
+
+
+/* =========================================
+   TEXTOS DEL PANEL
+========================================= */
+
+.panel p {
+  margin: 4px 0;
+
+  color: #faf7f0;
+
+  font-family: "Lato", sans-serif;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  line-height: 1.6;
+
+  letter-spacing: 0.8px;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 950px) {
+
+  .contenedor {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+
+    padding: 45px 0;
+  }
+
+  .contenido {
+    max-width: 650px;
+
+    padding: 0;
+  }
+
+  .descripcion {
+    max-width: 600px;
+  }
+
+  .visual {
+    width: 100%;
+
+    max-width: 800px;
+
+    margin: 0 auto;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .taller {
+    min-height: auto;
+  }
+
+  .contenedor {
+    width: 90%;
+
+    padding: 40px 0;
+  }
+
+  .titulo {
+    font-size: 31px;
+  }
+
+  .descripcion {
+    font-size: 12px;
+
+    line-height: 1.7;
+  }
+
+  .visual {
+    grid-template-columns: 1fr;
+
+    min-height: auto;
+  }
+
+  .imagenWrapper,
+  .imagen {
+    min-height: 270px;
+  }
+
+  .panel {
+    min-height: 170px;
+
+    padding: 20px;
+
+    display: grid;
+
+    grid-template-columns: auto auto;
+
+    grid-template-rows: auto auto auto;
+
+    column-gap: 20px;
+  }
+
+  .icono {
+    display: none;
+  }
+
+  .numero {
+    font-size: 32px;
+  }
+
+  .trayectoria {
+    text-align: left;
+  }
+
+  .separador {
+    display: none;
+  }
+
+  .panel p {
+    margin: 0;
+  }
+
+  .ornamento {
+    display: none;
+  }
+
+}

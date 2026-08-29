@@ -1,18 +1,24 @@
 import { Link } from "react-router-dom";
 import styles from "./About.module.css";
-import tallerImg from "../../assets/taller religioso.png";
+import tallerImg from "../../assets/taller.png";
 
 const About = () => {
   return (
-    <section className={styles.about} id="taller">
+    <section className={styles.about}>
+
+      {/* Ornamento lateral */}
+      <div className={styles.ornament}></div>
 
       <div className={styles.container}>
 
-        <div className={styles.content}>
+        {/* TEXTO */}
+        <div className={styles.textContent}>
 
-          <span className={styles.subtitle}>
-            El Taller
+          <span className={styles.label}>
+            EL TALLER
           </span>
+
+          <div className={styles.titleLine}></div>
 
           <h2>
             Arte, técnica y devoción
@@ -20,65 +26,66 @@ const About = () => {
             al servicio del patrimonio
           </h2>
 
-          <div className={styles.line}></div>
+          <div className={styles.smallLine}></div>
 
           <p>
             Nuestro trabajo combina conocimiento técnico,
             sensibilidad artística y profundo respeto por cada obra.
-          </p>
-
-          <p>
             Intervenimos con criterios de conservación rigurosos
             para devolver a cada pieza su belleza original
             y asegurar su legado a las futuras generaciones.
           </p>
 
-          <Link
-            to="/historia"
-            className={styles.button}
-          >
-            <span>Conocer nuestra historia</span>
-            <strong>→</strong>
+          <Link to="/historia" className={styles.button}>
+            CONOCER NUESTRA HISTORIA
+            <span>→</span>
           </Link>
 
         </div>
 
-        <div className={styles.imageWrapper}>
+        {/* IMAGEN + PANEL */}
+        <div className={styles.visual}>
 
-          <img
-            src={tallerImg}
-            alt="Restauración de una imagen religiosa en el taller"
-          />
-
-        </div>
-
-        <aside className={styles.experience}>
-
-          <div className={styles.icon}>
-            ✦
+          <div className={styles.imageWrapper}>
+            <img
+              src={tallerImg}
+              alt="Restauración de una imagen religiosa"
+            />
           </div>
 
-          <strong className={styles.number}>
-            30+
-          </strong>
+          <div className={styles.experience}>
 
-          <span className={styles.years}>
-            AÑOS DE TRAYECTORIA
-          </span>
+            <div className={styles.icon}>
+              ♜
+            </div>
 
-          <div className={styles.separator}></div>
+            <div className={styles.number}>
+              30+
+            </div>
 
-          <p>
-            CADA OBRA
-            <br />
-            ES ÚNICA.
-            <br />
-            CADA DETALLE
-            <br />
-            IMPORTA.
-          </p>
+            <div className={styles.years}>
+              AÑOS DE TRAYECTORIA
+            </div>
 
-        </aside>
+            <div className={styles.divider}></div>
+
+            <p>
+              CADA OBRA
+              <br />
+              ES ÚNICA.
+              <br />
+              CADA DETALLE
+              <br />
+              IMPORTA.
+            </p>
+
+            <div className={styles.decorativeSymbol}>
+              ✦
+            </div>
+
+          </div>
+
+        </div>
 
       </div>
 

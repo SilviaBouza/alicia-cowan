@@ -1,29 +1,38 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap");
 
 :root {
-  /* Colores */
-  --borgona: #6E1F2A;
-  --borgona-dark: #4A141C;
-  --marfil: #FAF7F0;
-  --dorado: #C19A56;
-  --grafito: #343434;
-  --gris: #E7E2DC;
+  /* ==============================
+     PALETA ELEGANCIA PATRIMONIAL
+  ============================== */
 
-  /* Tipografía */
+  --borgona: #6e1f2a;
+  --borgona-dark: #4a141c;
+  --marfil: #faf7f0;
+  --dorado: #c19a56;
+  --grafito: #343434;
+  --gris: #e7e2dc;
+
+  /* Tipografías */
   --titulo: "Playfair Display", serif;
   --texto: "Lato", sans-serif;
 
-  /* Espaciado */
+  /* Contenedor */
   --container: 1200px;
+
+  /* Bordes */
   --radius: 12px;
 
   /* Sombras */
-  --shadow-sm: 0 4px 12px rgba(0, 0, 0, .08);
-  --shadow-md: 0 10px 30px rgba(0, 0, 0, .12);
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.12);
 
   /* Transiciones */
-  --transition: .3s ease;
+  --transition: 0.3s ease;
 }
+
+/* ==============================
+   RESET GENERAL
+============================== */
 
 * {
   margin: 0;
@@ -35,6 +44,19 @@ html {
   scroll-behavior: smooth;
 }
 
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* ==============================
+   BODY
+============================== */
+
 body {
   background: var(--marfil);
   color: var(--grafito);
@@ -42,24 +64,54 @@ body {
   line-height: 1.6;
 }
 
+/* ==============================
+   CONTENEDOR PRINCIPAL
+============================== */
+
+main {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* ==============================
+   IMÁGENES
+============================== */
+
 img {
   display: block;
   width: 100%;
 }
+
+/* ==============================
+   ENLACES
+============================== */
 
 a {
   text-decoration: none;
   color: inherit;
 }
 
+/* ==============================
+   SECCIONES
+============================== */
+
 section {
   padding: 100px 0;
 }
+
+/* ==============================
+   CONTENEDOR
+============================== */
 
 .container {
   width: min(var(--container), 90%);
   margin: 0 auto;
 }
+
+/* ==============================
+   TÍTULOS
+============================== */
 
 h1,
 h2,

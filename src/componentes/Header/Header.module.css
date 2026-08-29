@@ -103,6 +103,12 @@
   transition:
     color var(--transition),
     opacity var(--transition);
+
+  /* Necesario para los botones */ 
+  background: none; 
+  border: none; 
+  font-family: inherit; 
+  cursor: pointer;
 }
 
 .link:hover,

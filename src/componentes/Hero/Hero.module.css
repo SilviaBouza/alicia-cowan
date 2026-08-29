@@ -158,6 +158,9 @@
     transform var(--transition),
     background var(--transition),
     color var(--transition);
+    /* Para que el botón tenga el mismo aspecto que un enlace */ 
+    font-family: inherit;
+    cursor: pointer;
 }
 
 .primary {

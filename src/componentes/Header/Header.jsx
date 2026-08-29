@@ -1,12 +1,30 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import styles from "./Header.module.css";
 
 const Header = () => {
   const [menuAbierto, setMenuAbierto] = useState(false);
+  const navigate = useNavigate();
 
   const cerrarMenu = () => {
     setMenuAbierto(false);
+  };
+
+  const irASeccion = (seccion) => {
+    cerrarMenu();
+
+    navigate("/");
+
+    setTimeout(() => {
+      const elemento = document.getElementById(seccion);
+
+      if (elemento) {
+        elemento.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    }, 100);
   };
 
   return (
@@ -29,9 +47,10 @@ const Header = () => {
 
         {/* Botón menú móvil */}
         <button
+          type="button"
           className={styles.menuButton}
           onClick={() => setMenuAbierto(!menuAbierto)}
-          aria-label="Abrir menú"
+          aria-label={menuAbierto ? "Cerrar menú" : "Abrir menú"}
           aria-expanded={menuAbierto}
         >
           <span></span>
@@ -45,6 +64,7 @@ const Header = () => {
             menuAbierto ? styles.navAbierto : ""
           }`}
         >
+          {/* INICIO */}
           <NavLink
             to="/"
             end
@@ -56,22 +76,27 @@ const Header = () => {
             Inicio
           </NavLink>
 
-          <Link
-            to="/#taller"
+          {/* EL TALLER */}
+          <button
+            type="button"
             className={styles.link}
-            onClick={cerrarMenu}
+            onClick={() => irASeccion("taller")}
           >
             El Taller
-          </Link>
+          </button>
 
-          <Link
-            to="/#servicios"
-            className={styles.link}
+          {/* SERVICIOS */}
+          <NavLink
+            to="/servicios"
             onClick={cerrarMenu}
+            className={({ isActive }) =>
+              isActive ? styles.active : styles.link
+            }
           >
             Servicios
-          </Link>
+          </NavLink>
 
+          {/* OBRAS */}
           <NavLink
             to="/obras"
             onClick={cerrarMenu}
@@ -82,16 +107,18 @@ const Header = () => {
             Obras
           </NavLink>
 
-          <Link
-            to="/#proyectos"
+          {/* PROYECTOS */}
+          <button
+            type="button"
             className={styles.link}
-            onClick={cerrarMenu}
+            onClick={() => irASeccion("proyectos")}
           >
             Proyectos
-          </Link>
+          </button>
 
+          {/* HISTORIA */}
           <NavLink
-            to="/historia"
+            to="/biografia"
             onClick={cerrarMenu}
             className={({ isActive }) =>
               isActive ? styles.active : styles.link
@@ -100,6 +127,7 @@ const Header = () => {
             Historia
           </NavLink>
 
+          {/* CONTACTO */}
           <NavLink
             to="/contacto"
             onClick={cerrarMenu}
@@ -110,6 +138,7 @@ const Header = () => {
             Contacto
           </NavLink>
 
+          {/* BOTÓN CONTACTAR */}
           <Link
             to="/contacto"
             className={styles.button}
@@ -126,3 +155,4 @@ const Header = () => {
 };
 
 export default Header;
+
