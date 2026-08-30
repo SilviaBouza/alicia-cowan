@@ -1,24 +1,39 @@
+import tallerImg from "../assets/taller religioso.png";
+import identidadImg from "../assets/Identidad personal1.png";
+import heroImg from "../assets/hero.png";
+
 const obras = [
   {
     id: 1,
-    titulo: "Restauración",
+    titulo: "Restauración de imágenes",
+    lugar: "Taller Alicia Cowan",
     descripcion:
-      "Recuperación y conservación de imágenes religiosas respetando su historia y materiales originales.",
-    imagen: "/images/obra1.jpg",
+      "Restauración y conservación respetando la historia y los materiales originales.",
+    tecnica: "Restauración integral",
+    categoria: "Restauración",
+    imagen: tallerImg,
   },
+
   {
     id: 2,
-    titulo: "Escultura",
+    titulo: "Arte sacro",
+    lugar: "Obra de taller",
     descripcion:
-      "Creación de piezas artesanales con terminaciones de alta calidad y valor artístico.",
-    imagen: "/images/obra2.jpg",
+      "Intervenciones artesanales realizadas con sensibilidad y precisión.",
+    tecnica: "Restauración artística",
+    categoria: "Arte sacro",
+    imagen: identidadImg,
   },
+
   {
     id: 3,
-    titulo: "Pintura",
+    titulo: "Trabajo artesanal",
+    lugar: "Taller Alicia Cowan",
     descripcion:
-      "Trabajos pictóricos y policromías realizados con técnicas tradicionales.",
-    imagen: "/images/obra3.jpg",
+      "Procesos de conservación y creación aplicados al arte religioso.",
+    tecnica: "Técnica tradicional",
+    categoria: "Trabajo artesanal",
+    imagen: heroImg,
   },
 ];
 

@@ -1,6 +1,5 @@
 .gallery {
   padding: 90px 0 105px;
-
   background: var(--marfil);
 }
 
@@ -17,56 +16,78 @@
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-
-  margin-bottom: 30px;
+  gap: 40px;
+  margin-bottom: 45px;
 }
 
 .subtitle {
+  display: block;
   color: var(--dorado);
-
   font-size: 0.75rem;
   font-weight: 700;
-
   letter-spacing: 2px;
-
   text-transform: uppercase;
 }
 
 .titleDecor {
   display: flex;
   align-items: center;
-
   margin-top: 10px;
+  margin-bottom: 16px;
 }
 
 .titleDecor span {
   width: 55px;
   height: 1px;
-
   background: var(--dorado);
+}
+
+.title {
+  margin: 0 0 12px;
+  color: var(--borgona-dark);
+  font-family: var(--titulo);
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.introduction {
+  max-width: 650px;
+  margin: 0;
+  color: #666;
+  font-size: 0.88rem;
+  line-height: 1.7;
 }
 
 .allLink {
   display: inline-flex;
   align-items: center;
   gap: 20px;
-
+  flex-shrink: 0;
+  padding-bottom: 4px;
   color: var(--borgona);
-
+  text-decoration: none;
   font-size: 0.72rem;
   font-weight: 700;
-
+  letter-spacing: 0.5px;
   text-transform: uppercase;
+  transition:
+    color var(--transition),
+    transform var(--transition);
 }
 
 .allLink span {
   color: var(--dorado);
-
   font-size: 1.1rem;
+  transition: transform var(--transition);
 }
 
 .allLink:hover {
   color: var(--dorado);
+}
+
+.allLink:hover span {
+  transform: translateX(4px);
 }
 
 /* =========================
@@ -75,10 +96,8 @@
 
 .grid {
   display: grid;
-
   grid-template-columns: repeat(3, 1fr);
-
-  gap: 18px;
+  gap: 22px;
 }
 
 /* =========================
@@ -87,11 +106,8 @@
 
 .card {
   overflow: hidden;
-
   background: white;
-
   border: 1px solid #e5e0d8;
-
   transition:
     transform var(--transition),
     box-shadow var(--transition);
@@ -99,7 +115,6 @@
 
 .card:hover {
   transform: translateY(-5px);
-
   box-shadow: var(--shadow-md);
 }
 
@@ -108,19 +123,16 @@
 ========================= */
 
 .imageWrapper {
-  height: 260px;
-
+  height: 270px;
   overflow: hidden;
-
   background: var(--gris);
 }
 
 .imageWrapper img {
+  display: block;
   width: 100%;
   height: 100%;
-
   object-fit: cover;
-
   transition: transform 0.5s ease;
 }
 
@@ -133,41 +145,31 @@
 ========================= */
 
 .info {
-  padding: 18px 18px 14px;
+  padding: 20px 20px 16px;
 }
 
 .info h3 {
-  margin-bottom: 5px;
-
+  margin: 0 0 6px;
   color: var(--grafito);
-
   font-family: var(--texto);
-
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   font-weight: 700;
 }
 
 .lugar {
   display: block;
-
   margin-bottom: 10px;
-
   color: var(--borgona);
-
   font-size: 0.68rem;
   font-weight: 600;
 }
 
 .info p {
   min-height: 42px;
-
-  margin-bottom: 15px;
-
+  margin: 0 0 16px;
   color: #666;
-
   font-size: 0.73rem;
-
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 /* =========================
@@ -178,41 +180,85 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  padding-top: 12px;
-
+  gap: 15px;
+  padding-top: 13px;
   border-top: 1px solid var(--gris);
 }
 
 .footerCard span {
   color: #777;
-
   font-size: 0.65rem;
+  line-height: 1.4;
 }
 
-.footerCard button {
+/* Enlace para visualizar la obra */
+
+.viewLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 30px;
   height: 30px;
-
+  flex-shrink: 0;
   border: 1px solid var(--gris);
-
-  background: transparent;
-
   color: var(--dorado);
-
-  font-size: 1.2rem;
-
-  cursor: pointer;
-
+  text-decoration: none;
+  font-size: 1rem;
   transition:
     background var(--transition),
-    color var(--transition);
+    color var(--transition),
+    transform var(--transition);
 }
 
-.footerCard button:hover {
+.viewLink:hover {
   background: var(--dorado);
-
   color: white;
+  transform: translateX(2px);
+}
+
+/* =========================
+   BOTÓN FINAL
+========================= */
+
+.bottomLink {
+  display: flex;
+  justify-content: center;
+  margin-top: 45px;
+}
+
+.moreButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 14px 26px;
+  border: 1px solid var(--borgona);
+  color: var(--borgona);
+  background: transparent;
+  text-decoration: none;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  transition:
+    background var(--transition),
+    color var(--transition),
+    border-color var(--transition);
+}
+
+.moreButton span {
+  color: var(--dorado);
+  font-size: 1.1rem;
+}
+
+.moreButton:hover {
+  background: var(--borgona);
+  border-color: var(--borgona);
+  color: white;
+}
+
+.moreButton:hover span {
+  color: var(--dorado);
 }
 
 /* =========================
@@ -222,6 +268,14 @@
 @media (max-width: 850px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .heading {
+    align-items: flex-start;
+  }
+
+  .introduction {
+    max-width: 580px;
   }
 }
 
@@ -234,18 +288,43 @@
     padding: 70px 0;
   }
 
+  .container {
+    width: 90%;
+  }
+
   .heading {
     align-items: flex-start;
     flex-direction: column;
+    gap: 22px;
+    margin-bottom: 35px;
+  }
 
-    gap: 18px;
+  .title {
+    font-size: 2rem;
+  }
+
+  .introduction {
+    font-size: 0.82rem;
+  }
+
+  .allLink {
+    padding-bottom: 0;
   }
 
   .grid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .imageWrapper {
     height: 280px;
+  }
+
+  .bottomLink {
+    margin-top: 35px;
+  }
+
+  .moreButton {
+    width: 100%;
   }
 }

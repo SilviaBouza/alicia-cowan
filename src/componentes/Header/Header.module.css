@@ -11,11 +11,9 @@
   width: min(1400px, 94%);
   min-height: 88px;
   margin: 0 auto;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   gap: 35px;
 }
 
@@ -27,20 +25,16 @@
   display: flex;
   align-items: center;
   gap: 12px;
-
   color: white;
   text-decoration: none;
-
   flex-shrink: 0;
 }
 
 .logoMarca {
   position: relative;
-
   font-family: var(--titulo);
   font-size: 2.6rem;
   line-height: 1;
-
   color: var(--dorado);
   letter-spacing: -5px;
 }
@@ -49,10 +43,8 @@
   position: absolute;
   top: -13px;
   left: 16px;
-
   font-family: Arial, sans-serif;
   font-size: 0.75rem;
-
   letter-spacing: 0;
 }
 
@@ -88,44 +80,51 @@
 }
 
 .link,
-.active {
+.active,
+.navButton {
   position: relative;
-
   color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
-
+  font-family: var(--texto);
   font-size: 0.78rem;
   font-weight: 500;
   letter-spacing: 0.5px;
+  transition: color var(--transition);
+}
 
+/* Enlaces normales */
+
+.link,
+.active {
   padding: 34px 0 31px;
+}
 
-  transition:
-    color var(--transition),
-    opacity var(--transition);
+/* Botones que llevan a secciones de Home */
 
-  /* Necesario para los botones */ 
-  background: none; 
-  border: none; 
-  font-family: inherit; 
+.navButton {
+  padding: 34px 0 31px;
+  border: none;
+  background: transparent;
   cursor: pointer;
 }
 
+/* Hover */
+
 .link:hover,
+.navButton:hover,
 .active {
   color: var(--dorado);
 }
 
+/* Línea del elemento activo */
+
 .active::after {
   content: "";
-
   position: absolute;
   left: 0;
   right: 0;
   bottom: 21px;
-
   height: 1px;
-
   background: var(--dorado);
 }
 
@@ -138,20 +137,15 @@
   align-items: center;
   justify-content: center;
   gap: 12px;
-
   min-width: 130px;
-
   padding: 10px 15px;
-
   color: white;
   text-decoration: none;
-
   border: 1px solid var(--dorado);
-
+  font-family: var(--texto);
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.5px;
-
   transition:
     background var(--transition),
     color var(--transition);
@@ -177,31 +171,24 @@
 
 .menuButton {
   display: none;
-
   width: 42px;
   height: 42px;
-
   padding: 8px;
-
   border: 1px solid rgba(193, 154, 86, 0.5);
   background: transparent;
-
   cursor: pointer;
 }
 
 .menuButton span {
   display: block;
-
   width: 100%;
   height: 2px;
-
   margin: 5px 0;
-
   background: var(--dorado);
 }
 
 /* =========================
-   RESPONSIVE
+   TABLET
 ========================= */
 
 @media (max-width: 1100px) {
@@ -210,7 +197,8 @@
   }
 
   .link,
-  .active {
+  .active,
+  .navButton {
     font-size: 0.72rem;
   }
 
@@ -218,6 +206,10 @@
     font-size: 1rem;
   }
 }
+
+/* =========================
+   MENÚ MÓVIL
+========================= */
 
 @media (max-width: 900px) {
   .container {
@@ -232,17 +224,13 @@
     position: absolute;
     top: 78px;
     left: 0;
-
     width: 100%;
-
     display: none;
     flex-direction: column;
     align-items: stretch;
-
+    gap: 0;
     padding: 20px;
-
     background: var(--borgona-dark);
-
     border-top: 1px solid rgba(193, 154, 86, 0.25);
   }
 
@@ -251,11 +239,11 @@
   }
 
   .link,
-  .active {
+  .active,
+  .navButton {
+    width: 100%;
     padding: 12px 5px;
-
     text-align: center;
-
     font-size: 0.85rem;
   }
 
@@ -268,6 +256,10 @@
     width: 100%;
   }
 }
+
+/* =========================
+   CELULAR
+========================= */
 
 @media (max-width: 480px) {
   .container {
@@ -286,3 +278,4 @@
     font-size: 0.45rem;
   }
 }
+

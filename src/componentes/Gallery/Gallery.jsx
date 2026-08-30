@@ -3,48 +3,62 @@ import styles from "./Gallery.module.css";
 import obras from "../../data/obras";
 
 const Gallery = () => {
-  return (
-    <section className={styles.gallery} id="proyectos">
+  // Mostramos solamente una selección de proyectos destacados
+  const proyectosDestacados = obras.slice(0, 6);
 
+  return (
+    <section className={styles.gallery}>
       <div className={styles.container}>
 
+        {/* ENCABEZADO */}
         <div className={styles.heading}>
 
           <div>
             <span className={styles.subtitle}>
-              Proyectos destacados
+              PROYECTOS DESTACADOS
             </span>
 
             <div className={styles.titleDecor}>
               <span></span>
             </div>
+
+            <h2 className={styles.title}>
+              Una selección de nuestro trabajo
+            </h2>
+
+            <p className={styles.introduction}>
+              Cada obra refleja el compromiso del taller con la
+              restauración, la conservación y el arte sacro,
+              respetando la historia y los materiales originales.
+            </p>
           </div>
 
+          {/* ENLACE A LA GALERÍA COMPLETA */}
           <Link
             to="/obras"
             className={styles.allLink}
           >
-            Ver todos los proyectos
+            Ver todas las obras
             <span>→</span>
           </Link>
 
         </div>
 
+        {/* PROYECTOS DESTACADOS */}
         <div className={styles.grid}>
 
-          {obras.map((obra) => (
+          {proyectosDestacados.map((obra) => (
             <article
               key={obra.id}
               className={styles.card}
             >
 
               <div className={styles.imageWrapper}>
-
                 <img
                   src={obra.imagen}
                   alt={obra.titulo}
+                  loading="lazy"
                 />
-
               </div>
 
               <div className={styles.info}>
@@ -53,13 +67,17 @@ const Gallery = () => {
                   {obra.titulo}
                 </h3>
 
-                <span className={styles.lugar}>
-                  {obra.lugar}
-                </span>
+                {obra.lugar && (
+                  <span className={styles.lugar}>
+                    {obra.lugar}
+                  </span>
+                )}
 
-                <p>
-                  {obra.descripcion}
-                </p>
+                {obra.descripcion && (
+                  <p>
+                    {obra.descripcion}
+                  </p>
+                )}
 
                 <div className={styles.footerCard}>
 
@@ -67,9 +85,13 @@ const Gallery = () => {
                     {obra.tecnica}
                   </span>
 
-                  <button aria-label={`Ver ${obra.titulo}`}>
-                    +
-                  </button>
+                  <Link
+                    to="/obras"
+                    className={styles.viewLink}
+                    aria-label={`Ver obra ${obra.titulo}`}
+                  >
+                    →
+                  </Link>
 
                 </div>
 
@@ -80,8 +102,18 @@ const Gallery = () => {
 
         </div>
 
-      </div>
+        {/* BOTÓN FINAL */}
+        <div className={styles.bottomLink}>
+          <Link
+            to="/obras"
+            className={styles.moreButton}
+          >
+            Explorar todas las obras
+            <span>→</span>
+          </Link>
+        </div>
 
+      </div>
     </section>
   );
 };

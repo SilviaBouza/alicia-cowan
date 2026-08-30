@@ -10,13 +10,29 @@ const Header = () => {
     setMenuAbierto(false);
   };
 
-  const irASeccion = (seccion) => {
+  const irASeccion = (id) => {
     cerrarMenu();
 
+    // Si ya estamos en Home, hacemos scroll directamente
+    if (window.location.pathname === "/") {
+      const elemento = document.getElementById(id);
+
+      if (elemento) {
+        elemento.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+
+      return;
+    }
+
+    // Si estamos en otra página, primero volvemos a Home
     navigate("/");
 
+    // Esperamos a que Home se renderice
     setTimeout(() => {
-      const elemento = document.getElementById(seccion);
+      const elemento = document.getElementById(id);
 
       if (elemento) {
         elemento.scrollIntoView({
@@ -31,8 +47,12 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.container}>
 
-        {/* Logo */}
-        <Link to="/" className={styles.logo} onClick={cerrarMenu}>
+        {/* LOGO */}
+        <Link
+          to="/"
+          className={styles.logo}
+          onClick={cerrarMenu}
+        >
           <div className={styles.logoMarca}>
             <span className={styles.cruz}>✚</span>
             <span>AC</span>
@@ -45,12 +65,16 @@ const Header = () => {
           </div>
         </Link>
 
-        {/* Botón menú móvil */}
+        {/* BOTÓN MENÚ MÓVIL */}
         <button
           type="button"
           className={styles.menuButton}
           onClick={() => setMenuAbierto(!menuAbierto)}
-          aria-label={menuAbierto ? "Cerrar menú" : "Abrir menú"}
+          aria-label={
+            menuAbierto
+              ? "Cerrar menú"
+              : "Abrir menú"
+          }
           aria-expanded={menuAbierto}
         >
           <span></span>
@@ -58,12 +82,13 @@ const Header = () => {
           <span></span>
         </button>
 
-        {/* Navegación */}
+        {/* NAVEGACIÓN */}
         <nav
           className={`${styles.nav} ${
             menuAbierto ? styles.navAbierto : ""
           }`}
         >
+
           {/* INICIO */}
           <NavLink
             to="/"
@@ -79,22 +104,20 @@ const Header = () => {
           {/* EL TALLER */}
           <button
             type="button"
-            className={styles.link}
+            className={styles.navButton}
             onClick={() => irASeccion("taller")}
           >
             El Taller
           </button>
 
           {/* SERVICIOS */}
-          <NavLink
-            to="/servicios"
-            onClick={cerrarMenu}
-            className={({ isActive }) =>
-              isActive ? styles.active : styles.link
-            }
+          <button
+            type="button"
+            className={styles.navButton}
+            onClick={() => irASeccion("servicios")}
           >
             Servicios
-          </NavLink>
+          </button>
 
           {/* OBRAS */}
           <NavLink
@@ -110,22 +133,20 @@ const Header = () => {
           {/* PROYECTOS */}
           <button
             type="button"
-            className={styles.link}
+            className={styles.navButton}
             onClick={() => irASeccion("proyectos")}
           >
             Proyectos
           </button>
 
           {/* HISTORIA */}
-          <NavLink
-            to="/biografia"
-            onClick={cerrarMenu}
-            className={({ isActive }) =>
-              isActive ? styles.active : styles.link
-            }
+          <button
+            type="button"
+            className={styles.navButton}
+            onClick={() => irASeccion("historia")}
           >
             Historia
-          </NavLink>
+          </button>
 
           {/* CONTACTO */}
           <NavLink
@@ -138,7 +159,7 @@ const Header = () => {
             Contacto
           </NavLink>
 
-          {/* BOTÓN CONTACTAR */}
+          {/* CONTACTAR */}
           <Link
             to="/contacto"
             className={styles.button}
@@ -147,12 +168,11 @@ const Header = () => {
             Contactar
             <span className={styles.whatsappIcon}>◔</span>
           </Link>
-        </nav>
 
+        </nav>
       </div>
     </header>
   );
 };
 
 export default Header;
-

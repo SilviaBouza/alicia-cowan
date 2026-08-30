@@ -1,33 +1,17 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "./Hero.module.css";
 import heroImage from "../../assets/taller religioso.png";
 
 const Hero = () => {
-  const navigate = useNavigate();
-
   const irAlTaller = () => {
-    // Primero volvemos al inicio
-    navigate("/");
+    const elemento = document.getElementById("taller");
 
-    // Esperamos a que Home se renderice
-    setTimeout(() => {
-      const elemento = document.getElementById("taller");
-
-      if (elemento) {
-        const header = document.querySelector("header");
-        const alturaHeader = header ? header.offsetHeight : 0;
-
-        const posicion =
-          elemento.getBoundingClientRect().top +
-          window.scrollY -
-          alturaHeader;
-
-        window.scrollTo({
-          top: posicion,
-          behavior: "smooth",
-        });
-      }
-    }, 100);
+    if (elemento) {
+      elemento.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
   };
 
   return (
@@ -39,6 +23,7 @@ const Hero = () => {
 
       <div className={styles.container}>
 
+        {/* CONTENIDO PRINCIPAL */}
         <div className={styles.content}>
 
           <span className={styles.eyebrow}>
@@ -64,6 +49,7 @@ const Hero = () => {
             esculturas y obras de arte sacro.
           </p>
 
+          {/* BOTONES */}
           <div className={styles.buttons}>
 
             {/* VER OBRAS */}
@@ -89,8 +75,12 @@ const Hero = () => {
 
         </div>
 
+        {/* INDICADORES */}
         <div className={styles.indicadores}>
-          <span className={styles.indicadorActivo}>01</span>
+          <span className={styles.indicadorActivo}>
+            01
+          </span>
+
           <span>02</span>
           <span>03</span>
         </div>
@@ -101,3 +91,4 @@ const Hero = () => {
 };
 
 export default Hero;
+

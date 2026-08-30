@@ -7,7 +7,6 @@ import Biografia from "./Biografia";
 const Home = () => {
   return (
     <>
-      {/* INICIO */}
       <Hero />
 
       {/* EL TALLER */}
@@ -20,7 +19,7 @@ const Home = () => {
         <Services />
       </section>
 
-      {/* PROYECTOS */}
+      {/* PROYECTOS DESTACADOS */}
       <section id="proyectos">
         <Gallery />
       </section>
@@ -34,4 +33,3 @@ const Home = () => {
 };
 
 export default Home;
-
