@@ -69,16 +69,20 @@ const Biografia = () => {
             <div className={styles.linea}></div>
 
             <p>
-              A los 15 años, Alicia Cowan comenzó su camino
-              en el arte sacro, iniciándose en un oficio que
-              marcaría toda su trayectoria profesional.
+              Proveniente de una familia de artistas plásticos—
+              su abuelo y su madre fueron pintores—, Alicia Cowan
+              desarrolló desde muy joven una profunda sensibilidad 
+              por el arte.
             </p>
 
             <p>
-              Su formación estuvo vinculada al maestro Vior,
-              referente de la santería de Cofiño, donde adquirió
-              conocimientos fundamentales sobre las técnicas
-              tradicionales de policromía y restauración.
+              Con apenas quince años inició su formación como 
+              aprendiz en un reconocido taller de imaginería 
+              religiosa perteneciente a la familia Cofiño. 
+              Allí aprendió los secretos de la policromía 
+              tradicional bajo la enseñanza del maestro Vior, 
+              profesor egresado de la Escuela de Artes y 
+              Oficios Pío IX de los Salesianos.
             </p>
 
             <p>
@@ -118,10 +122,14 @@ const Biografia = () => {
             <div className={styles.linea}></div>
 
             <p>
-              Durante más de dos décadas, Alicia formó parte
-              de NODARCO, desarrollando y perfeccionando sus
-              conocimientos dentro de un ámbito dedicado al
-              arte religioso.
+              Tiempo después fundó, junto con otros dos socios, la casa NODARCO, 
+              cuyo nombre surgió de la unión de los apellidos Noseda, D'Argenio y Cowan.
+             
+              Este taller desarrolló su actividad entre 1957 y 1981, período durante 
+              el cual realizó numerosos trabajos de imaginería religiosa y restauración.
+              Finalizada esa etapa, Alicia Cowan continuó su labor de manera 
+              independiente, consolidando un taller propio que con el tiempo se transformó 
+              en un referente dentro del ámbito de la restauración de arte sacro en Argentina.
             </p>
 
             <p>
@@ -365,25 +373,40 @@ const Biografia = () => {
             <div className={styles.linea}></div>
 
             <p>
-              Aunque Alicia se encuentra retirada de la actividad,
-              su legado continúa a través de un equipo formado
-              por profesionales que buscan mantener vivos sus
-              conocimientos, su sensibilidad y su compromiso
-              con el patrimonio.
+              La experiencia acumulada durante toda una vida 
+              fue transmitida a una nueva generación de artesanos.
             </p>
 
             <p>
-              El trabajo continúa bajo la guía y experiencia
-              transmitida a lo largo de los años, conservando
-              los valores de excelencia, respeto y dedicación
-              que caracterizan al taller.
+              Los hermanos Bouza comenzaron a formarse junto a
+              Alicia Cowan desde muy jóvenes, incorporando 
+              progresivamente los conocimientos y técnicas que 
+              caracterizaron su trabajo.
             </p>
 
+            <p>Con el paso de los años, cada uno desarrolló una
+               especialidad dentro del taller —restauración, 
+               policromía, decoración, moldería y desarrollo de 
+               esculturas—, asegurando la continuidad de un oficio 
+               artesanal que requiere paciencia, precisión y 
+               profundo respeto por el patrimonio religioso.
+            </p>
+
+            <p>Hoy, ese legado permanece vivo, manteniendo los 
+              mismos principios de excelencia, dedicación y 
+              compromiso que distinguieron la trayectoria de 
+              Alicia Cowan desde sus comienzos.
+            </p>
+
+
+
+
             <ul>
+              <li>Carlos Guillermo Bouza</li>
               <li>Francisca Bouza</li>
               <li>Silvia Bouza</li>
               <li>Mauricio Bouza</li>
-              <li>Carlos Guillermo Bouza</li>
+              
             </ul>
 
           </div>
